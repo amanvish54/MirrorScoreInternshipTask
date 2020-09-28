@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DiscussionWallActivity">
+
+    <RelativeLayout
+        android:id="@+id/linear_layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#058ECC">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"/>
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Discussion Wall"/>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="12dp"
+        app:cardCornerRadius="10dp"
+        android:id="@+id/cardview_post"
+        android:layout_below="@id/linear_layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_margin="12dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/userphoto"/>
+            <LinearLayout
+                android:layout_weight="1"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginStart="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/background_add_post_layout">
+                <LinearLayout
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <EditText
+                        android:id="@+id/new_post_question"
+                        android:textColorHint="#F2393737"
+                        android:textColor="#F2393737"
+                        android:textSize="13sp"
+                        android:layout_weight="2"
+                        android:background="@null"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:hint="Post a Question"/>
+                    <TextView
+                        android:layout_weight="2"
+                        android:layout_marginTop="2dp"
+                        android:textSize="10sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="upload a Doc/Video"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="end"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/post_send_btn"
+                        android:onClick="processSendingPost"
+                        android:layout_marginEnd="12dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_baseline_send_24"/>
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_post"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/cardview_post"
+        />
+
+
+
+</RelativeLayout>
