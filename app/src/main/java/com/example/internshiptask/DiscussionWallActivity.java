@@ -84,7 +84,7 @@ public class DiscussionWallActivity extends AppCompatActivity {
             newQuestion.setError("Please Enter a Question");
             return;
         }
-        
+
 
         Call<PostResponse> postResponseCall = ApiClient.getInstance().getApi().createNewPost(
                 "discussionWall/post?userId="+Integer.parseInt(userId),
