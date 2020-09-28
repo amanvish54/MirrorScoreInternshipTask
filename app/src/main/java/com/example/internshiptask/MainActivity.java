@@ -39,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void processLogin() {
+        if (mEmail.getText().toString().isEmpty() || mPassword.getText().toString().isEmpty()){
+            mEmail.setError("Please Enter Valid Fields");
+            return;
+        }
 
        Call<LoginResponse> loginResponseCall = ApiClient.getInstance().getApi().userLogin(mEmail.getText().toString(),mPassword.getText().toString());
        loginResponseCall.enqueue(new Callback<LoginResponse>() {

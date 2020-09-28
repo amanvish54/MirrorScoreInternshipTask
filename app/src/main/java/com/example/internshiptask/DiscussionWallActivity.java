@@ -80,11 +80,11 @@ public class DiscussionWallActivity extends AppCompatActivity {
     public void processSendingPost(View view) {
         String question = newQuestion.getText().toString().trim();
 
-
         if (question.isEmpty()){
-            newQuestion.setError("Please Enter your question");
+            newQuestion.setError("Please Enter a Question");
             return;
         }
+        
 
         Call<PostResponse> postResponseCall = ApiClient.getInstance().getApi().createNewPost(
                 "discussionWall/post?userId="+Integer.parseInt(userId),
